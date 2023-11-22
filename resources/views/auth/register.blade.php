@@ -23,7 +23,7 @@
                     <input id="name"
                         type="text"
                         class="form-control"
-                        name="name" required>
+                        name="name" value="{{ old('name') }}" required>
                     <div class="invalid-feedback">
                         please fill in your name
                     </div>
@@ -68,7 +68,7 @@
                     <input id="outlet-name"
                         type="text"
                         class="form-control"
-                        name="outlet_name" required>
+                        name="outlet_name" value="{{ old('outlet_name') }}" required>
                     <div class="invalid-feedback">
                         please fill in your outlet name
                     </div>
