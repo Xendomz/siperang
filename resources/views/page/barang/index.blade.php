@@ -89,7 +89,7 @@
                             <div class="form-group">
                                 <label>Price</label>
                                 <div class="input-group">
-                                    <input type="number" class="form-control" id="price" placeholder="0" name="price"
+                                    <input type="number" class="form-control" id="price" placeholder="0" min="0" name="price"
                                         required>
                                     <div class="invalid-feedback">
                                         Please fill price
@@ -99,7 +99,7 @@
                             <div class="form-group">
                                 <label>Stok</label>
                                 <div class="input-group">
-                                    <input type="number" class="form-control" id="stok" placeholder="0" name="stock"
+                                    <input type="number" class="form-control" id="stok" placeholder="0" min="0" name="stock"
                                         required>
                                     <div class="invalid-feedback">
                                         Please fill stock
