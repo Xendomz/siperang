@@ -35,6 +35,11 @@
                         type="email"
                         class="form-control"
                         name="email" required>
+                    @error('email')
+                    <div style="font-size: 80%; color:#dc3545">
+                        {{ $message }}
+                    </div>
+                    @enderror
                     <div class="invalid-feedback">
                         please fill in your email
                     </div>

@@ -34,6 +34,10 @@ class LoginController extends Controller
 
     public function register(Request $request)
     {
+        $this->validate($request, [
+            'email' => 'unique:users,email'
+        ]);
+
         $exitst_outlet = Outlet::where('name', 'LIKE', "%{$request->outlet_name}%")->first();
         if (!$exitst_outlet) {
             $outlet = Outlet::create([
