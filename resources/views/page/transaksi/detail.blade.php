@@ -55,12 +55,14 @@
                                                     </tr>
                                                     @php
                                                         $total += $barang->barang->price * $barang->qty;
-                                                        if ($transaksi->diskon) {
-                                                            $diskon = ($total * $transaksi->diskon) / 100;
-                                                            $total = $total - $diskon;
-                                                        }
                                                     @endphp
                                                 @endforeach
+                                                @php
+                                                    if ($transaksi->diskon) {
+                                                        $diskon = ($total * $transaksi->diskon) / 100;
+                                                        $total = $total - $diskon;
+                                                    }
+                                                @endphp
                                             </tbody>
                                         </table>
                                     </div>

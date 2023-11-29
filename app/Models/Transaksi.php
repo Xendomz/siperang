@@ -30,9 +30,8 @@ class Transaksi extends Model
     {
         $total = 0;
         foreach ($this->transaksiBarangs as $key => $transaksi_barang) {
-            $total += $transaksi_barang->barang->price;
+            $total += $transaksi_barang->barang->price * $transaksi_barang->qty;
         }
-
 
         if ($this->diskon) {
             $diskon = ($total * $this->diskon)/100;

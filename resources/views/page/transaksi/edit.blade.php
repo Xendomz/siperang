@@ -145,7 +145,7 @@
                                         <label>Diskon (*optional)</label>
                                         <div class="input-group">
                                             <input type="number" class="form-control" id="diskon" placeholder="0"
-                                                name="diskon" min="0">
+                                                name="diskon" min="0" value="{{ $transaksi->diskon }}">
                                         </div>
                                     </div>
                                 </div>

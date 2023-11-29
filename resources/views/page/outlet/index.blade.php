@@ -171,8 +171,12 @@
                         url: `/outlet/${id}/delete`,
                         type: "post",
                         success: function(res) {
-                            table.ajax.reload();
-                            swal('Good Job', res.message, 'success');
+                            if ('is_redirect' in res) {
+                                window.location.replace(res.redirect_path);
+                            } else{
+                                table.ajax.reload();
+                                swal('Good Job', res.message, 'success');
+                            }
                         }
                     })
                 }

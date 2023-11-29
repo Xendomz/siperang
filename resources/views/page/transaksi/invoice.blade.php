@@ -37,12 +37,14 @@
                             </tr>
                             @php
                                 $total += $barang['barang']->price * $barang['qty'];
+                            @endphp
+                            @endforeach
+                            @php
                                 if ($diskon) {
                                     $diskon = ($total * $diskon)/100;
                                     $total = $total - $diskon;
                                 }
                             @endphp
-                            @endforeach
                         </tbody>
                     </table>
                 </div>

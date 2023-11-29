@@ -26,13 +26,14 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
+        $hasOwner = User::where('outlet_id', auth()->user()->outlet->id)->where('role', 'Owner')->first();
         User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password),
             'outlet_id' => auth()->user()->outlet->id,
-            'is_active' => 0,
-            'role' => 'Staff'
+            'is_active' => $hasOwner ? 0 : 1,
+            'role' => $hasOwner ? 'Staff' : 'Owner'
         ]);
 
         return response()->json(['message' => 'Add User successfully!']);

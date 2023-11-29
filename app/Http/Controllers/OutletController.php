@@ -59,6 +59,12 @@ class OutletController extends Controller
     public function delete(Outlet $outlet)
     {
         if (request()->ajax()) {
+            if (auth()->user()->isAdmin && auth()->user()->isHasOutlet) {
+                auth()->user()->update(['outlet_id' => null]);
+                $outlet->delete();
+
+                return response()->json(['is_redirect' => true, 'redirect_path' => route('dashboard')]);
+            }
             $outlet->delete();
 
             return response()->json(['message' => 'Delete Outlet successfully!']);
